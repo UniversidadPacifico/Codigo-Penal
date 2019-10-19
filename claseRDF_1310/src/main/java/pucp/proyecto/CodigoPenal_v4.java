@@ -108,7 +108,24 @@ public class CodigoPenal_v4 {
         defineSubPropiedades(model, diasLibresRes, limitada);
         defineSubPropiedades(model, inhabilitacion, limitada);
         defineSubPropiedades(model, servicioComunitario, limitada);
-    
+            // Punibilidad
+        Property punibilidad = crearPropiedad(NS, "Punibilidad", model);
+                // Base
+        Property base = crearPropiedad(NS, "Base", model);
+        defineSubPropiedades(model, base, punibilidad);
+        Property falta = crearPropiedad(NS, "Falta", model);
+        Property doloso = crearPropiedad(NS, "Doloso", model);
+        Property omision = crearPropiedad(NS, "Omisión", model);
+        Property error = crearPropiedad(NS, "Error", model);
+        Property errorCultural = crearPropiedad(NS, "ErrorCultural", model);
+        defineSubPropiedades(model, falta, base);
+        defineSubPropiedades(model, doloso, base);
+        defineSubPropiedades(model, omision, base);
+        defineSubPropiedades(model, error, base);
+        defineSubPropiedades(model, errorCultural, base);
+                // Tentativa
+        Property tentativa = crearPropiedad(NS, "Tentativa", model);
+        defineSubPropiedades(model, tentativa, punibilidad);
     }   
     
     
