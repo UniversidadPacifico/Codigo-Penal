@@ -38,9 +38,12 @@ public class CodigoPenal_v4 {
         Resource libro1 = crearRecurso(NS, "Libro1", model);
         Resource libro2 = crearRecurso(NS, "Libro2", model);
         Resource libro3 = crearRecurso(NS, "Libro3", model);
-        agregarPropiedadARecurso(libro1, nombre, "ParteGeneral");
-        agregarPropiedadARecurso(libro2, nombre, "Delitos");
+        agregarPropiedadARecurso(libro1, nombre, "DisposicionesGenerales");
+        agregarPropiedadARecurso(libro2, nombre, "TipoDeDelito");
         agregarPropiedadARecurso(libro3, nombre, "Fallas");
+        crearRelacion(model, codigoPenal, tiene, libro1);
+        crearRelacion(model, codigoPenal, tiene, libro2);
+        crearRelacion(model, codigoPenal, tiene, libro3);
         // Capítulo 1
         Resource capitulo1 = crearRecurso(NS, "Capitulo1", model);
         agregarPropiedadARecurso(capitulo1, nombre, "SaludYVida");
@@ -75,6 +78,37 @@ public class CodigoPenal_v4 {
         defineTipo(model, sicariato, hcalificado);
         defineTipo(model, csicariato, hcalificado);
         defineTipo(model, cvictima, hcalificado);
+        
+        // Propiedades
+        // TODO: Agregar propiedades a libro 2
+            // Victima
+        Property victima = crearPropiedad(NS, "Victima", model);
+            // Contexto
+        Property contexto = crearPropiedad(NS, "Contexto", model);
+        Property tiempo = crearPropiedad(NS, "Tiempo", model);
+        Property espacio = crearPropiedad(NS, "Espacio", model);
+        defineSubPropiedades(model, tiempo, contexto);
+        defineSubPropiedades(model, espacio, contexto);
+            // Pena
+        Property pena = crearPropiedad(NS, "Pena", model);
+        Property privativa = crearPropiedad(NS, "Privativa", model);
+        Property restrictiva = crearPropiedad(NS, "Restrictiva", model);
+        Property limitada = crearPropiedad(NS, "Limitada", model);
+        Property multa = crearPropiedad(NS, "Multa", model);
+        defineSubPropiedades(model, privativa, pena);
+        defineSubPropiedades(model, restrictiva, pena);
+        defineSubPropiedades(model, limitada, pena);
+        defineSubPropiedades(model, multa, pena);
+                // Limitada
+        Property iAccesitoria = crearPropiedad(NS, "Inha.Accesitoria", model);
+        Property diasLibresRes = crearPropiedad(NS, "DiasLibrsRestringidos", model);
+        Property inhabilitacion = crearPropiedad(NS, "Inhabilitación", model);
+        Property servicioComunitario = crearPropiedad(NS, "ServicioComunitario", model);
+        defineSubPropiedades(model, iAccesitoria, limitada);
+        defineSubPropiedades(model, diasLibresRes, limitada);
+        defineSubPropiedades(model, inhabilitacion, limitada);
+        defineSubPropiedades(model, servicioComunitario, limitada);
+    
     }   
     
     
