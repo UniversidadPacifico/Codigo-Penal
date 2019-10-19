@@ -126,6 +126,11 @@ public class CodigoPenal_v4 {
                 // Tentativa
         Property tentativa = crearPropiedad(NS, "Tentativa", model);
         defineSubPropiedades(model, tentativa, punibilidad);
+        Property tentativapropia = crearPropiedad(NS,"TentativaPropia",model);
+        Property impunidad = crearPropiedad(NS, "Impunidad", model);
+        defineSubPropiedades(model, tentativapropia, tentativa);
+        defineSubPropiedades(model, impunidad, tentativa);
+        
     }   
     
     
