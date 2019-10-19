@@ -19,14 +19,14 @@ import org.apache.jena.vocabulary.RDFS;
  * @author calva
  */
 public class CodigoPenal_v4 {
- 
+
     public static void main(String[] args){
         String NS = "https://www.codigopenalperu/#";
         Model model = ModelFactory.createDefaultModel();
         relaciones(model, NS);
         descargarArchivo(model, "CodigoPenalFinal_v4");
     }
-    
+
     public static void relaciones(Model model, String NS){
         //Ley Peruana y Código penal
         Resource leyPeruana = crearRecurso(NS, "LeyPeruana", model);
@@ -51,7 +51,7 @@ public class CodigoPenal_v4 {
         // Homicidios
         Resource homicidio = crearRecurso(NS, "Homicidio", model);
         crearRelacion(model, capitulo1, tiene, homicidio);
-        
+
         Resource hcalificado = crearRecurso(NS, "H.Calificado", model);
         Resource hculposo = crearRecurso(NS, "H.Culposo", model);
         Resource hsimple = crearRecurso(NS, "H.Simple", model);
@@ -64,7 +64,7 @@ public class CodigoPenal_v4 {
         Resource sicariato = crearRecurso(NS, "Sicariato", model);
         Resource csicariato = crearRecurso(NS, "Consp.Sicariato", model);
         Resource cvictima = crearRecurso(NS, "CondicionVictima", model);
-        
+
         defineSubClase(model, hcalificado, homicidio);
         defineSubClase(model, hculposo, homicidio);
         defineSubClase(model, hsimple, homicidio);
@@ -78,9 +78,9 @@ public class CodigoPenal_v4 {
         defineTipo(model, sicariato, hcalificado);
         defineTipo(model, csicariato, hcalificado);
         defineTipo(model, cvictima, hcalificado);
-        
+
         // Propiedades
-        // TODO: Agregar propiedades a libro 2
+        // TODO: Agregar propiedades a libro 1
             // Victima
         Property victima = crearPropiedad(NS, "Victima", model);
             // Contexto
@@ -176,38 +176,44 @@ public class CodigoPenal_v4 {
         defineSubPropiedades(model, reincidentes, agravantes);
         defineSubPropiedades(model, parentesco, agravantes);
         
-    }   
-    
+        
+        // Hechos
+        Resource victimario = crearRecurso(NS, "Victimario", model);
+        agregarPropiedadARecurso(victimario, nombre, "CarloAlva");
+        Property es = crearPropiedad(NS, "es", model);
+        
+    }
+
     public static void agregarPropiedadARecurso(Resource resource, Property property, String value){
         resource.addProperty(property, value);
     }
-    
+
     public static void crearRelacion(Model model, Resource inputResource, Property property, Resource outputResource){
         model.add(inputResource, property, outputResource);
     }
-    
+
     public static void defineTipo(Model model, Resource childResource, Resource parentResource) {
         model.add(childResource, RDF.type, parentResource);
     }
-    
+
     public static void defineSubClase(Model model, Resource childResource, Resource parentResource) {
         model.add(childResource, RDFS.subClassOf, parentResource);
     }
-    
+
     public static void defineSubPropiedades(Model model, Property childProp, Property parentProp) {
         model.add(childProp, RDFS.subPropertyOf, parentProp);
     }
-    
+
     private static Property crearPropiedad(String NS, String id, Model model) {
         String propertyURI = NS + id;
         return model.createProperty(propertyURI);
     }
-    
+
     private static Resource crearRecurso(String NS, String id, Model model) {
         String resourceURI = NS + id;
         return model.createResource(resourceURI);
     }
-    
+
     private static void descargarArchivo(Model model, String nombreArchivo) {
         FileOutputStream output = null;
         try {
