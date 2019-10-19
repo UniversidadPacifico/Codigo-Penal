@@ -1,0 +1,71 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="https://www.codigopenalperu/#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsNietoDe">
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#FamiliarDe">
+        <rdfs:subPropertyOf>
+          <rdf:Description rdf:about="https://www.codigopenalperu/#EsConocidoDe">
+            <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Relacion"/>
+          </rdf:Description>
+        </rdfs:subPropertyOf>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsAbueloDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsVecinoDe">
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#NoFamiliarDe">
+        <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#EsConocidoDe"/>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsAmigoDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#NoFamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsEsposaDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsMadreDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsPadreDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <j.0:Victima rdf:about="https://www.codigopenalperu/#Pepe">
+    <j.0:EsPadreDe>
+      <j.0:Victimario rdf:about="https://www.codigopenalperu/#Pepe Jr"/>
+    </j.0:EsPadreDe>
+  </j.0:Victima>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsPrimoDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsDesconocidoDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Relacion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsHijoDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsEsposoDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#persona">
+    <j.0:nombreCompleto>nombreCompleto</j.0:nombreCompleto>
+    <j.0:edad>edad</j.0:edad>
+    <j.0:region>region</j.0:region>
+    <j.0:provincia>provincia</j.0:provincia>
+    <j.0:distrito>distrito</j.0:distrito>
+    <j.0:direccion>direccion</j.0:direccion>
+    <j.0:genero>genero</j.0:genero>
+    <j.0:etnicidad>etnicidad</j.0:etnicidad>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Victima">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Victimario">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#persona"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,103 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="https://www.codigopenalperu/#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsNietoDe">
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#FamiliarDe">
+        <rdfs:subPropertyOf>
+          <rdf:Description rdf:about="https://www.codigopenalperu/#EsConocidoDe">
+            <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Relacion"/>
+          </rdf:Description>
+        </rdfs:subPropertyOf>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </rdf:Description>
+  <j.0:H.Simple rdf:about="https://www.codigopenalperu/#Parricidio">
+    <j.0:PenaMinimaAgravante>25 años</j.0:PenaMinimaAgravante>
+    <j.0:PenaMinima>15 años</j.0:PenaMinima>
+  </j.0:H.Simple>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsAbueloDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#Sicariato"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsHijoDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#H.Piadoso">
+    <rdfs:subClassOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#Homicidio">
+        <j.0:PenaMaxima>20 años</j.0:PenaMaxima>
+        <j.0:PenaMinima>6 años</j.0:PenaMinima>
+        <rdfs:subClassOf>
+          <rdf:Description rdf:about="https://www.codigopenalperu/#Titulo Vida Salud">
+            <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Delito"/>
+          </rdf:Description>
+        </rdfs:subClassOf>
+      </rdf:Description>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsEsposoDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Victimario">
+    <rdfs:subClassOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#persona">
+        <j.0:etnicidad>etnicidad</j.0:etnicidad>
+        <j.0:genero>genero</j.0:genero>
+        <j.0:direccion>direccion</j.0:direccion>
+        <j.0:distrito>distrito</j.0:distrito>
+        <j.0:provincia>provincia</j.0:provincia>
+        <j.0:region>region</j.0:region>
+        <j.0:edad>edad</j.0:edad>
+        <j.0:nombreCompleto>nombreCompleto</j.0:nombreCompleto>
+      </rdf:Description>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#Consp.Sicariato"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsVecinoDe">
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#NoFamiliarDe">
+        <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#EsConocidoDe"/>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsAmigoDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#NoFamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Infaticidio">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#Feminicidio"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsEsposaDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsMadreDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsPadreDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsPrimoDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#FamiliarDe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#EsDesconocidoDe">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Relacion"/>
+  </rdf:Description>
+  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#CondicionVictima"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Victima">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#persona"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#H.Culposo">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#H.E.Violenta">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#H.Calificado">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#H.Simple">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+</rdf:RDF>
