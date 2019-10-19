@@ -13,6 +13,7 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.RDFS;
+import org.apache.jena.vocabulary.VCARD;
 
 /**
  *
@@ -22,10 +23,33 @@ public class CodigoPenal_v4 {
  
     public static void main(String[] args){
         String NS = "https://www.codigopenalperu/#";
-
         Model model = ModelFactory.createDefaultModel();
-
+        relaciones(model, NS);
         descargarArchivo(model, "CodigoPenalFinal_v4");
+    }
+    
+    public static void relaciones(Model model, String NS){
+        //Ley Peruana y Código penal
+        Resource leyPeruana = crearRecurso(NS, "LeyPeruana", model);
+        Property tiene = crearPropiedad(NS, "tiene", model);
+        Resource codigoPenal = crearRecurso(NS, "CodigoPenal", model);
+        crearRelacion(model, leyPeruana, tiene, codigoPenal);
+        //Libros de código penal
+        Property nombre = crearPropiedad(NS, "nombre", model);
+        Resource libro1 = crearRecurso(NS, "Libro1", model);
+        Resource libro2 = crearRecurso(NS, "Libro2", model);
+        Resource libro3 = crearRecurso(NS, "Libro3", model);
+        agregarPropiedadARecurso(libro1, nombre, "ParteGeneral");
+        agregarPropiedadARecurso(libro2, nombre, "Delitos");
+        agregarPropiedadARecurso(libro3, nombre, "Fallas");
+    }
+    
+    public static void agregarPropiedadARecurso(Resource resource, Property property, String value){
+        resource.addProperty(property, value);
+    }
+    
+    public static void crearRelacion(Model model, Resource inputResource, Property property, Resource outputResource){
+        model.add(inputResource, property, outputResource);
     }
     
     public static void defineTipo(Model model, Resource childResource, Property parentResource) {

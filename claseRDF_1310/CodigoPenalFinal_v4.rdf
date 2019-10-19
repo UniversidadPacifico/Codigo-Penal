@@ -1,0 +1,16 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="https://www.codigopenalperu/#">
+  <rdf:Description rdf:about="https://www.codigopenalperu/#LeyPeruana">
+    <j.0:tiene rdf:resource="https://www.codigopenalperu/#CodigoPenal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Libro3">
+    <j.0:nombre>Fallas</j.0:nombre>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Libro2">
+    <j.0:nombre>Delitos</j.0:nombre>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Libro1">
+    <j.0:nombre>ParteGeneral</j.0:nombre>
+  </rdf:Description>
+</rdf:RDF>

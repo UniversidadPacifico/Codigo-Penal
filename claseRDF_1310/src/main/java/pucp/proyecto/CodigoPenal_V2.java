@@ -9,7 +9,7 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.RDFS;
 
-public class CodigoPenal {
+public class CodigoPenal_V2 {
 
     static String NS = "https://www.codigopenalperu/#";
 
@@ -98,26 +98,15 @@ public class CodigoPenal {
         defineSubClases(model, NS, persona);
         definePropiedades(model, NS);
     }
-
-    //public static void defineSubClases(Model model, String NS, Resource Padre) {
-        
-   
-	
-		//Resource victima = crearRecurso(NS, "Victima", model);
-        //Resource victimario = crearRecurso(NS, "Victimario", model);
-
-        //model.add(victima, RDFS.subClassOf, Padre);ME PARECE QUE VICTIMA DE PROPIEDAD
-        //model.add(victimario, RDFS.subClassOf, Padre);
-		
-		 Property esVictima = defineSubPropiedades(NS, "es_victima", model);
-		 Property esVictimario = defineSubPropiedades(NS, "es_victimario", model);
-       
-       
-       //RELACIONES
-       
-   
-
-    //}
+    
+    public static Property defineSubPropiedades(String NomSubProp, Property Prop) {
+        Property subProp = crearPropiedad(NS, NomSubProp, model);
+        model.add(subProp, RDFS.subPropertyOf, Prop);
+        return subProp;
+    }
+    
+    public static void defineSubClases(Model model, String NS, Resource Padre) {
+    }
 
     public static void definePropiedades(Model model, String NS) {
         Property Relacion = crearPropiedad(NS, "Relacion", model);
@@ -148,21 +137,6 @@ public class CodigoPenal {
         Property EsAmigoDe = defineSubPropiedades("EsAmigoDe", NoFamiliarDe);
         Property EsVecinoDe = defineSubPropiedades("EsVecinoDe", NoFamiliarDe);
 
-    }
-	
-	   model.add(esPG1,RDFS.subPropertyOf, esVictima);
-       model.add(esPG1,RDFS.subPropertyOf, esVictimario);
-       model.add(esPG2,RDFS.subPropertyOf, esVictima);
-       model.add(esPG2,RDFS.subPropertyOf, esVictimario);
-       
-       model.add(hijo, esPG1 ,esVictimario);
-	   model.add(padre,esPG1,esVictima)
-       model.add(padre, esVictima, parricidio);
-
-    public static Property defineSubPropiedades(String NomSubProp, Property Prop) {
-        Property subProp = crearPropiedad(NS, NomSubProp, model);
-        model.add(subProp, RDFS.subPropertyOf, Prop);
-        return subProp;
     }
 
     private static Property crearPropiedad(String NS, String id, Model model) {
