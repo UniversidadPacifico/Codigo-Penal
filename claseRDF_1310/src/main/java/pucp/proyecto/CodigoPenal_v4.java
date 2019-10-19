@@ -128,6 +128,22 @@ public class CodigoPenal_v4 {
         defineSubPropiedades(model, tentativa, punibilidad);
     }   
     
+    public static void temp(Property punibilidad, Model model, String NS){
+        Property autoria = crearPropiedad(NS, "Autoria", model);
+        defineSubPropiedades(model, autoria, punibilidad);
+        Property autor = crearPropiedad(NS, "Autor", model);
+        Property coautor = crearPropiedad(NS, "CoAutor", model);
+        Property instigador = crearPropiedad(NS, "Instigador", model);
+        Property complice = crearPropiedad(NS, "Complice", model);
+        Property incomunicabilidad = crearPropiedad(NS, "Incomunicabilidad", model);
+        Property accionPorOtros = crearPropiedad(NS, "AccionPorOtros", model);
+        defineSubPropiedades(model, autor, autoria);
+        defineSubPropiedades(model, coautor, autoria);
+        defineSubPropiedades(model, instigador, autoria);
+        defineSubPropiedades(model, complice, autoria);
+        defineSubPropiedades(model, incomunicabilidad, autoria);
+        defineSubPropiedades(model, accionPorOtros, autoria);
+    }
     
     public static void agregarPropiedadARecurso(Resource resource, Property property, String value){
         resource.addProperty(property, value);
