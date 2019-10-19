@@ -42,7 +42,15 @@ public class CodigoPenal_v4 {
         agregarPropiedadARecurso(libro1, nombre, "ParteGeneral");
         agregarPropiedadARecurso(libro2, nombre, "Delitos");
         agregarPropiedadARecurso(libro3, nombre, "Fallas");
-    }
+        // Capítulo 1
+        Resource capitulo1 = crearRecurso(NS, "Capitulo1", model);
+        agregarPropiedadARecurso(capitulo1, nombre, "SaludYVida");
+        crearRelacion(model, libro2, tiene, capitulo1);
+        // Homicidio
+        Resource homicidio = crearRecurso(NS, "Homicidio", model);
+        crearRelacion(model, capitulo1, tiene, homicidio);
+    }   
+    
     
     public static void agregarPropiedadARecurso(Resource resource, Property property, String value){
         resource.addProperty(property, value);

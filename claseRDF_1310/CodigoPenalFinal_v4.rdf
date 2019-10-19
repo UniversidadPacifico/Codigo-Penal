@@ -8,6 +8,12 @@
     <j.0:nombre>Fallas</j.0:nombre>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.codigopenalperu/#Libro2">
+    <j.0:tiene>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#Capitulo1">
+        <j.0:tiene rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+        <j.0:nombre>SaludYVida</j.0:nombre>
+      </rdf:Description>
+    </j.0:tiene>
     <j.0:nombre>Delitos</j.0:nombre>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.codigopenalperu/#Libro1">
