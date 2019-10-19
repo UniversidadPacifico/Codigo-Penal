@@ -1,0 +1,49 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="https://www.codigopenalperu/#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdf:Description rdf:about="https://www.codigopenalperu/#LeyPeruana">
+    <j.0:tiene rdf:resource="https://www.codigopenalperu/#CodigoPenal"/>
+  </rdf:Description>
+  <j.0:H.Simple rdf:about="https://www.codigopenalperu/#Parricidio"/>
+  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#Consp.Sicariato"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Libro3">
+    <j.0:nombre>Fallas</j.0:nombre>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Libro2">
+    <j.0:tiene>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#Capitulo1">
+        <j.0:tiene rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+        <j.0:nombre>SaludYVida</j.0:nombre>
+      </rdf:Description>
+    </j.0:tiene>
+    <j.0:nombre>Delitos</j.0:nombre>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Infaticidio">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#Sicariato"/>
+  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#Feminicidio"/>
+  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#CondicionVictima"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Inst.Suicidio">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#H.Piadoso">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Libro1">
+    <j.0:nombre>ParteGeneral</j.0:nombre>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#H.Culposo">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#H.E.Violenta">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#H.Calificado">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#H.Simple">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+</rdf:RDF>
