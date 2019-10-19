@@ -2,6 +2,93 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:j.0="https://www.codigopenalperu/#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdf:Description rdf:about="https://www.codigopenalperu/#UsoDeMenor">
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#Agravantes">
+        <rdfs:subPropertyOf>
+          <rdf:Description rdf:about="https://www.codigopenalperu/#AplicaciónPena">
+            <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Punibilidad"/>
+          </rdf:Description>
+        </rdfs:subPropertyOf>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#DiasLibrsRestringidos">
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#Limitada">
+        <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Pena"/>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#CoAutor">
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#Autoria">
+        <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Punibilidad"/>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </rdf:Description>
+  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#Sicariato"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Complice">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Autoria"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#TentativaPropia">
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#Tentativa">
+        <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Punibilidad"/>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#H.Piadoso">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#ServicioComunitario">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Limitada"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Inimputable">
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#Causa">
+        <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Punibilidad"/>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#ErrorCultural">
+    <rdfs:subPropertyOf>
+      <rdf:Description rdf:about="https://www.codigopenalperu/#Base">
+        <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Punibilidad"/>
+      </rdf:Description>
+    </rdfs:subPropertyOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Infaticidio">
+    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+  </rdf:Description>
+  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#Feminicidio"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Varios">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Tentativa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Privativa">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Pena"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Habitualidad">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Agravantes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Reincidentes">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Agravantes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#ArrepentimientoActivo">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Tentativa"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#AccionPorOtros">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Autoria"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Multa">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Pena"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Falta">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Base"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Instigador">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Autoria"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://www.codigopenalperu/#LeyPeruana">
     <j.0:tiene>
       <rdf:Description rdf:about="https://www.codigopenalperu/#CodigoPenal">
@@ -30,52 +117,33 @@
     </j.0:tiene>
   </rdf:Description>
   <j.0:H.Simple rdf:about="https://www.codigopenalperu/#Parricidio"/>
-  <rdf:Description rdf:about="https://www.codigopenalperu/#DiasLibrsRestringidos">
-    <rdfs:subPropertyOf>
-      <rdf:Description rdf:about="https://www.codigopenalperu/#Limitada">
-        <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Pena"/>
-      </rdf:Description>
-    </rdfs:subPropertyOf>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Circunstancias">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#AplicaciónPena"/>
   </rdf:Description>
-  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#Sicariato"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#ResponsabilidadRestringida">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Causa"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://www.codigopenalperu/#Espacio">
     <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Contexto"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Incomunicabilidad">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Autoria"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.codigopenalperu/#Inst.Suicidio">
     <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.codigopenalperu/#Omisión">
-    <rdfs:subPropertyOf>
-      <rdf:Description rdf:about="https://www.codigopenalperu/#Base">
-        <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Punibilidad"/>
-      </rdf:Description>
-    </rdfs:subPropertyOf>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://www.codigopenalperu/#Tentativa">
-    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Punibilidad"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://www.codigopenalperu/#H.Piadoso">
-    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Base"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.codigopenalperu/#Inhabilitación">
-    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Limitada"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://www.codigopenalperu/#ServicioComunitario">
     <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Limitada"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.codigopenalperu/#Tiempo">
     <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Contexto"/>
   </rdf:Description>
   <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#Consp.Sicariato"/>
-  <rdf:Description rdf:about="https://www.codigopenalperu/#ErrorCultural">
-    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Base"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://www.codigopenalperu/#Infaticidio">
-    <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>
-  </rdf:Description>
-  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#Feminicidio"/>
-  <rdf:Description rdf:about="https://www.codigopenalperu/#Privativa">
-    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Pena"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Parentesco">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Agravantes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.codigopenalperu/#Error">
     <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Base"/>
@@ -83,18 +151,24 @@
   <rdf:Description rdf:about="https://www.codigopenalperu/#Inha.Accesitoria">
     <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Limitada"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://www.codigopenalperu/#Multa">
-    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Pena"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#ResponsabilidadRestringidaEdad">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Causa"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://www.codigopenalperu/#Falta">
-    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Base"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Presupuesto">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#AplicaciónPena"/>
   </rdf:Description>
-  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#CondicionVictima"/>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Autor">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Autoria"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://www.codigopenalperu/#Doloso">
     <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Base"/>
   </rdf:Description>
+  <j.0:H.Calificado rdf:about="https://www.codigopenalperu/#CondicionVictima"/>
   <rdf:Description rdf:about="https://www.codigopenalperu/#Restrictiva">
     <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Pena"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://www.codigopenalperu/#Impunidad">
+    <rdfs:subPropertyOf rdf:resource="https://www.codigopenalperu/#Tentativa"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://www.codigopenalperu/#H.Culposo">
     <rdfs:subClassOf rdf:resource="https://www.codigopenalperu/#Homicidio"/>

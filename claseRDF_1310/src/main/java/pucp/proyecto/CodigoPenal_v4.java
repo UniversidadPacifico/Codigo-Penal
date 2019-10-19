@@ -128,12 +128,13 @@ public class CodigoPenal_v4 {
         defineSubPropiedades(model, tentativa, punibilidad);
         Property tentativapropia = crearPropiedad(NS, "TentativaPropia", model);
         Property impunidad = crearPropiedad(NS, "Impunidad", model);
+        Property arrepentimientoActivo = crearPropiedad(NS, "ArrepentimientoActivo", model);
+        Property varios = crearPropiedad(NS, "Varios", model);
         defineSubPropiedades(model, tentativapropia, tentativa);
         defineSubPropiedades(model, impunidad, tentativa);
-        
-    }   
-    
-    public static void temp(Property punibilidad, Model model, String NS){
+        defineSubPropiedades(model, arrepentimientoActivo, tentativa);
+        defineSubPropiedades(model, varios, tentativa);
+                // Autoria
         Property autoria = crearPropiedad(NS, "Autoria", model);
         defineSubPropiedades(model, autoria, punibilidad);
         Property autor = crearPropiedad(NS, "Autor", model);
@@ -148,7 +149,34 @@ public class CodigoPenal_v4 {
         defineSubPropiedades(model, complice, autoria);
         defineSubPropiedades(model, incomunicabilidad, autoria);
         defineSubPropiedades(model, accionPorOtros, autoria);
-    }
+                // Causa
+        Property causa = crearPropiedad(NS, "Causa", model);
+        defineSubPropiedades(model, causa, punibilidad);
+        Property inimputable = crearPropiedad(NS, "Inimputable", model);
+        Property responsabilidadRestringida = crearPropiedad(NS, "ResponsabilidadRestringida", model);
+        Property responsabilidadRestringidaEdad = crearPropiedad(NS, "ResponsabilidadRestringidaEdad", model);
+        defineSubPropiedades(model, inimputable, causa);
+        defineSubPropiedades(model, responsabilidadRestringida, causa);
+        defineSubPropiedades(model, responsabilidadRestringidaEdad, causa);
+                // Aplicación de Pena
+        Property aplicacionPena = crearPropiedad(NS, "AplicaciónPena", model);
+        defineSubPropiedades(model, aplicacionPena, punibilidad);
+        Property presupuesto = crearPropiedad(NS, "Presupuesto", model);
+        Property circunstancias = crearPropiedad(NS, "Circunstancias", model);
+        Property agravantes = crearPropiedad(NS, "Agravantes", model);
+        defineSubPropiedades(model, presupuesto, aplicacionPena);
+        defineSubPropiedades(model, circunstancias, aplicacionPena);
+        defineSubPropiedades(model, agravantes, aplicacionPena);
+        Property usoDeMenor = crearPropiedad(NS, "UsoDeMenor", model);
+        Property habitualidad = crearPropiedad(NS, "Habitualidad", model);
+        Property reincidentes = crearPropiedad(NS, "Reincidentes", model);
+        Property parentesco = crearPropiedad(NS, "Parentesco", model);
+        defineSubPropiedades(model, usoDeMenor, agravantes);
+        defineSubPropiedades(model, habitualidad, agravantes);
+        defineSubPropiedades(model, reincidentes, agravantes);
+        defineSubPropiedades(model, parentesco, agravantes);
+        
+    }   
     
     public static void agregarPropiedadARecurso(Resource resource, Property property, String value){
         resource.addProperty(property, value);
