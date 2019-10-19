@@ -13,7 +13,6 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.RDFS;
-import org.apache.jena.vocabulary.VCARD;
 
 /**
  *
@@ -46,9 +45,36 @@ public class CodigoPenal_v4 {
         Resource capitulo1 = crearRecurso(NS, "Capitulo1", model);
         agregarPropiedadARecurso(capitulo1, nombre, "SaludYVida");
         crearRelacion(model, libro2, tiene, capitulo1);
-        // Homicidio
+        // Homicidios
         Resource homicidio = crearRecurso(NS, "Homicidio", model);
         crearRelacion(model, capitulo1, tiene, homicidio);
+        
+        Resource hcalificado = crearRecurso(NS, "H.Calificado", model);
+        Resource hculposo = crearRecurso(NS, "H.Culposo", model);
+        Resource hsimple = crearRecurso(NS, "H.Simple", model);
+        Resource infanticidio = crearRecurso(NS, "Infaticidio", model);
+        Resource isuicidio = crearRecurso(NS, "Inst.Suicidio", model);
+        Resource hpiadoso = crearRecurso(NS, "H.Piadoso", model);
+        Resource hviolenta = crearRecurso(NS, "H.E.Violenta", model);
+        Resource parricidio = crearRecurso(NS, "Parricidio", model);
+        Resource feminicidio = crearRecurso(NS, "Feminicidio", model);
+        Resource sicariato = crearRecurso(NS, "Sicariato", model);
+        Resource csicariato = crearRecurso(NS, "Consp.Sicariato", model);
+        Resource cvictima = crearRecurso(NS, "CondicionVictima", model);
+        
+        defineSubClase(model, hcalificado, homicidio);
+        defineSubClase(model, hculposo, homicidio);
+        defineSubClase(model, hsimple, homicidio);
+        defineSubClase(model, infanticidio, homicidio);
+        defineSubClase(model, hpiadoso, homicidio);
+        defineSubClase(model, hviolenta, homicidio);
+        defineSubClase(model, isuicidio, homicidio);
+
+        defineTipo(model, parricidio, hsimple);
+        defineTipo(model, feminicidio, hcalificado);
+        defineTipo(model, sicariato, hcalificado);
+        defineTipo(model, csicariato, hcalificado);
+        defineTipo(model, cvictima, hcalificado);
     }   
     
     
@@ -60,8 +86,12 @@ public class CodigoPenal_v4 {
         model.add(inputResource, property, outputResource);
     }
     
-    public static void defineTipo(Model model, Resource childResource, Property parentResource) {
+    public static void defineTipo(Model model, Resource childResource, Resource parentResource) {
         model.add(childResource, RDF.type, parentResource);
+    }
+    
+    public static void defineSubClase(Model model, Resource childResource, Resource parentResource) {
+        model.add(childResource, RDFS.subClassOf, parentResource);
     }
     
     public static void defineSubPropiedades(Model model, Property childProp, Property parentProp) {
