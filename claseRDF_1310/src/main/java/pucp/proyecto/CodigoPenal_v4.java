@@ -22,7 +22,7 @@ public class CodigoPenal_v4 {
         descargarArchivo(model, "CodigoPenalFinal_v4");
     }
 
-    public static void relaciones(Model model, String NS){
+        public static void relaciones(Model model, String NS){
         //Ley Peruana y Código penal
         Resource leyPeruana = crearRecurso(NS, "LeyPeruana", model);
         Property tiene = crearPropiedad(NS, "tiene", model);
@@ -39,10 +39,14 @@ public class CodigoPenal_v4 {
         crearRelacion(model, codigoPenal, tiene, libro1);
         crearRelacion(model, codigoPenal, tiene, libro2);
         crearRelacion(model, codigoPenal, tiene, libro3);
+        //titulo vida y salud
+        Resource titulo1 = crearRecurso(NS,"VidaySalud", model);
+        
         // Capítulo 1
         Resource capitulo1 = crearRecurso(NS, "Capitulo1", model);
-        agregarPropiedadARecurso(capitulo1, nombre, "SaludYVida");
-        crearRelacion(model, libro2, tiene, capitulo1);
+        crearRelacion(model, libro2, tiene, titulo1);
+        crearRelacion(model, titulo1,tiene, capitulo1);
+        
         // Homicidios
         Resource homicidio = crearRecurso(NS, "Homicidio", model);
         crearRelacion(model, capitulo1, tiene, homicidio);
@@ -76,6 +80,8 @@ public class CodigoPenal_v4 {
 
         // Propiedades
         // TODO: Agregar propiedades a libro 1
+        
+               
             // Victima
         Property victima = crearPropiedad(NS, "Victima", model);
             // Contexto
@@ -172,6 +178,12 @@ public class CodigoPenal_v4 {
         defineSubPropiedades(model, parentesco, agravantes);
         
         
+        crearRelacion(model, libro1, tiene, contexto);
+        crearRelacion(model, libro1, tiene, pena);
+        crearRelacion(model, libro1, tiene, punibilidad);
+        crearRelacion(model, libro1, tiene, victima);
+        
+        
         // Hechos
         Resource hecho = crearRecurso(NS, "Hecho", model);
         Resource victimario = crearRecurso(NS, "Victimario", model);
@@ -180,12 +192,12 @@ public class CodigoPenal_v4 {
         Resource vicDirecto = crearRecurso(NS, "Directo", model);
         Resource victimah = crearRecurso(NS, "Victima", model);
         //propiedades de Hecho
-        Property causah = crearPropiedad(NS, "Causa", model);
+        Property causa1 = crearPropiedad(NS, "Causa", model);
         Property AccionAdjetivo = crearPropiedad(NS, "AcciónCalificativo", model);
         
-        definetipo(model, vicDirecto, victimario);
-        definetipo(model, vicImplicado, victimario);
-        defineTipo(model, causah,hecho);
+        defineSubClase(model, vicDirecto, victimario);
+        defineSubClase(model, vicImplicado, victimario);
+        defineTipo(model, causa,hecho);
         defineTipo(model, AccionAdjetivo,hecho);
         defineTipo(model, victimah,hecho);
         
@@ -233,4 +245,5 @@ public class CodigoPenal_v4 {
         }
         model.write(output, "RDF/XML-ABBREV");
     }
+    
 }
