@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pucp.proyecto;
 
 import java.io.FileNotFoundException;
@@ -178,9 +173,24 @@ public class CodigoPenal_v4 {
         
         
         // Hechos
+        Resource hecho = crearRecurso(NS, "Hecho", model);
         Resource victimario = crearRecurso(NS, "Victimario", model);
-        agregarPropiedadARecurso(victimario, nombre, "CarloAlva");
-        Property es = crearPropiedad(NS, "es", model);
+            //victimario
+        Resource vicImplicado = crearRecurso(NS, "Implicado", model);
+        Resource vicDirecto = crearRecurso(NS, "Directo", model);
+        Resource victima = crearRecurso(NS, "Victima", model);
+        //propiedades de Hecho
+        Property causa = crearPropiedad(NS, "Causa", model);
+        Property AcciónAdjetivo = crearPropiedad(NS, "AcciónCalificativo", model);
+        
+        definetipo(model, vicDirecto, victimario);
+        definetipo(model, vicImplicado, victimario);
+        defineTipo(model, causa,hecho);
+        defineTipo(model, AccionAdjetivo,hecho);
+        defineTipo(model, victima,hecho);
+        
+                
+        //agregarPropiedadARecurso(victimario, nombre, "CarloAlva");
         
     }
 
