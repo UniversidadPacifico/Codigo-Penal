@@ -178,16 +178,16 @@ public class CodigoPenal_v4 {
             //victimario
         Resource vicImplicado = crearRecurso(NS, "Implicado", model);
         Resource vicDirecto = crearRecurso(NS, "Directo", model);
-        Resource victima = crearRecurso(NS, "Victima", model);
+        Resource victimah = crearRecurso(NS, "Victima", model);
         //propiedades de Hecho
-        Property causa = crearPropiedad(NS, "Causa", model);
-        Property AcciónAdjetivo = crearPropiedad(NS, "AcciónCalificativo", model);
+        Property causah = crearPropiedad(NS, "Causa", model);
+        Property AccionAdjetivo = crearPropiedad(NS, "AcciónCalificativo", model);
         
         definetipo(model, vicDirecto, victimario);
         definetipo(model, vicImplicado, victimario);
-        defineTipo(model, causa,hecho);
+        defineTipo(model, causah,hecho);
         defineTipo(model, AccionAdjetivo,hecho);
-        defineTipo(model, victima,hecho);
+        defineTipo(model, victimah,hecho);
         
                 
         //agregarPropiedadARecurso(victimario, nombre, "CarloAlva");
