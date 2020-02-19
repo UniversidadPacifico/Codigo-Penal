@@ -1,4 +1,4 @@
 # Codigo-Penal
-Trabajo de ingeniería y gestión del conocimiento
+Law ontology fo peruvian criminal law
 
-CodigoPenal_V2 está fallado
+
